@@ -124,17 +124,25 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Assessment:</h2>
-        <h4>Please Select Country:</h4>
-        <select className="form-control" name="country" onChange={this.handleCountryChange}>
-          <option selected>Select Country</option>
-          <option value="India">India</option>
-          <option value="USA">USA</option>
-          <option value="Canada">Canada</option>
-        </select>
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
-      </div>
+      <section id="assessment-page">
+        <section className="l-content">
+          <p>Assessment:</p>
+          <label>Please Select Country:</label>
+          <select className="form-control" name="country" onChange={this.handleCountryChange}>
+            <option selected>Select Country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+          </select>
+          {this.state.result ? this.renderResult() : this.renderQuiz()}
+        </section>
+        <section className="r-content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </section>
+      </section>
     );
   }
 }

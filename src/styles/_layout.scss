@@ -1,4 +1,8 @@
 #inner-content {
+    background: url("https://www.buehlermotor.com/fileadmin/templates/website/media/images/final/Produkte_und_Maerkte/Healthcare/buehler_motor_healthcare_header.jpg");
+    background-size: cover;
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
     header {
         width: 100%;
         padding: 30px;
@@ -30,5 +34,27 @@
             width: 700px;
             height: 700px;
         }
+    }
+}
+#assessment-page {
+    padding: 65px;
+    .l-content {
+        width: 45%;
+        background: #dbe6e4d9;
+        display: inline-block;
+        height: 20%;
+        padding: 45px;
+        border: 1px solid;
+        border-radius: 10px;
+    }
+    .r-content {
+        width: 50%;
+    }
+    select {
+        margin-bottom: 15px;
+    }
+    ul {
+        list-style: none;
+        padding-left: 0;
     }
 }
