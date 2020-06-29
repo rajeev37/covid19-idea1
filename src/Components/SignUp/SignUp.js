@@ -29,7 +29,7 @@ const SignUp = inject("stores")(observer(class SignUp extends React.Component {
                 <form>
                     
                      <label for="contactNumber">Contact Number</label>
-                    <input type="number" name="contactNumber" required />
+                    <input type="type" name="contactNumber" required />
                     
                     <label for="username">Username</label>
                     <input type="text" name="username" required/>
