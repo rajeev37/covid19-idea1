@@ -9,15 +9,11 @@ import * as serviceWorker from './serviceWorker';
 import stores from "./stores";
 
 ReactDOM.render(
-  <React.StrictMode>
     <Provider stores={ stores }>
-      <Router>  
         <Container>
           <App />
         </Container>
-      </Router>
-    </Provider>    
-  </React.StrictMode>,
+    </Provider> ,
   document.getElementById('root')
 );
 serviceWorker.unregister();

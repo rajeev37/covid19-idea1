@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import quizQuestions from './quizQuestions';
 import Quiz from './Quiz';
-import { Container, Row, Col } from 'react-bootstrap';
 // import Result from './Result';
 
 class App extends Component {
@@ -32,7 +31,7 @@ class App extends Component {
       question: quizQuestions[selectedCountry][0].question,
       answerOptions: shuffledAnswerOptions[0],
       country: selectedCountry
-    });  
+    });
   }
 
   shuffleArray(array) {
@@ -122,30 +121,20 @@ class App extends Component {
   renderResult() {
     return ""; // <Result quizResult={this.state.result} />;
   }
- 
+
   render() {
     return (
-      <Container>
-        <Row>
-          <Col>
-            <h2>Assessment:</h2>
-          </Col>          
-        </Row>
-        <Row>          
-          <Col md="auto">
-            <h4>Please Select Country:</h4>
-          </Col>
-          <Col md="auto">
-          <select className="form-control" name="country" onChange={this.handleCountryChange}>
-            <option selected>Select Country</option>
-            <option value="India">India</option>
-            <option value="USA">USA</option>
-            <option value="Canada">Canada</option>
-          </select>
-          </Col>
-        </Row>
+      <div>
+        <h2>Assessment:</h2>
+        <h4>Please Select Country:</h4>
+        <select className="form-control" name="country" onChange={this.handleCountryChange}>
+          <option selected>Select Country</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="Canada">Canada</option>
+        </select>
         {this.state.result ? this.renderResult() : this.renderQuiz()}
-      </Container>
+      </div>
     );
   }
 }

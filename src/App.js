@@ -1,25 +1,36 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
 import './App.scss';
-import Header from "./Components/organisms/Header/Header.js";
-import Footer from "./Components/organisms/Footer/Footer.js";
-import Home from "./Components/Home/Home.js";
-import About from "./Components/About/About.js";
-import SignUp from "./Components/SignUp/SignUp.js";
-import Login from "./Components/Login/Login.js";
+import LoginSignUp from './Components/LoginSignUp/LoginSignUp.js';
+
+import { BrowserRouter as Router } from "react-router-dom";
+
+
+import InnerHeader from "./Components/InnerHeader/InnerHeader.js";
+
 import Assessment from "./Components/Assessment/Assessment.js";
+
+const NavRoute = ({exact, path, component: Component}) => (
+  <Route exact={exact} path={path} render={(props) => (
+    <main id="inner-content">
+      <InnerHeader />
+      {/* <SideBar /> */}
+      <Component {...props}/>
+    </main>
+  )}/>
+)
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Switch>
-        <Route component={About} path="/about" />
-        <Route component={Home} exact path="/" />
-        <Route component={SignUp} path="/sign-up" />
-        <Route component={Login} exact path="/sign-in" />
-        <Route component={Assessment} exact path="/assessment" />
-      </Switch>
-      <Footer/>
+      <Router>
+        <Switch>
+          <Route component={LoginSignUp} exact path="/" />
+          <NavRoute exact component={Assessment} path="/assessment" />
+          {/* <NavRoute exact component={DashBoard} path="/dashboard" /> */}
+          {/* <Route component={Login} exact path="/sign-in" /> */}
+        </Switch>
+      </Router>
+      {/* <Footer/> */}
     </div>
   );
 }

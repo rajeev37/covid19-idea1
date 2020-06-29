@@ -20,39 +20,23 @@ class Login extends React.Component {
     render() {
         const { email, password, rememberMe } = this.state;
         return (
-            <Form onSubmit={this.submitLogin}>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control
-                        type="email"
-                        name="email"
-                        value={email}
-                        onChange={this.changeHandler}
-                        placeholder="Enter email"
-                    />
-                </Form.Group>
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                        type="password"
-                        name="password"
-                        value={password}
-                        onChange={this.changeHandler}
-                        placeholder="Password"
-                    />
-                </Form.Group>
-                <Form.Group controlId="formBasicCheckbox">
-                    <Form.Check
-                        type="checkbox"
-                        name="rememberMe"
-                        value={rememberMe}
-                        onChange={this.changeHandler}
-                        label="Remember me" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-            </Form>
+            <div id="sign-in-form">
+                <form>
+                    <label for="username">Username</label>
+                    <input id="username" type="text" name="username" />
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password" />
+                    <input id="remember" type="checkbox" />
+                    <label for="remember" id="rlabel">Keep me Signed in</label>
+                    <input type="submit" class="button" name="submit" value="Sign in" />
+                </form>
+
+                <div className="footer">
+                    <div class="hr"></div>
+                    <div class="fp"><a href="">Forgot Password?</a></div>
+                </div>
+            </div>
+
         );
     }
 }

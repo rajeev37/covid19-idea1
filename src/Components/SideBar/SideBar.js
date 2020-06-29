@@ -5,13 +5,11 @@ import LeftSection from "../LeftSection/LeftSection.js";
 
 import RightSection from "../RightSection/RightSection.js";
 
-class Home extends React.Component {
+class SideBar extends React.Component {
     render() {
         return (
-            <section className="r-content">
-                <div>Home</div>
-            </section>
+            <LeftSection />
         );
     }
 }
-export default Home;
+export default SideBar;
