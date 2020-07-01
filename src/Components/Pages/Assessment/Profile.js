@@ -6,6 +6,7 @@ function Profile(props) {
     const f = props.profile;
   return (
     <Form noValidate onSubmit={props.submitProfileDetail}>
+        <p>Please Provide personal detail to start assessment.</p>
           <Form.Row>
             <Form.Group as={Col} md="12" controlId="formGridState">
                 <Form.Label>Please Select Country:</Form.Label>

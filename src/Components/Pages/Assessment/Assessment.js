@@ -19,7 +19,6 @@ class App extends Component {
       country: "default",
       isProfileShow: true,
       profile: {
-        country: "",
         name: "",
         gender: "",
         mobile: "",
@@ -40,7 +39,7 @@ class App extends Component {
   handleCountryChange = (event) => {
     const selectedCountry = event.target.value;
     this.setState({
-      country: selectedCountry,
+      country: selectedCountry
     });
     
     setTimeout(() => console.log("#1###", this.state), 300);
@@ -151,7 +150,7 @@ submitProfileDetail = (e) => {
     return (
       <section id="assessment-page">
         <section className="l-content">
-          <p>Assessment:</p>          
+          <strong>Self Assessment:</strong>          
           {this.state.isProfileShow ? this.renderProfileForm() : ""}
           {this.state.result ? this.renderResult() : this.renderQuiz()}
         </section>
